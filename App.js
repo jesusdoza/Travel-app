@@ -1,12 +1,41 @@
 import { StatusBar } from "expo-status-bar";
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+    Pressable,
+    ScrollView,
+    StyleSheet,
+    Text,
+    View,
+    VirtualizedList,
+} from "react-native";
 import { SearchPlaces } from "./components/SearchPlaces";
 import { Map } from "./components/Map";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import * as Location from "expo-location";
 
 export default function App() {
+    //location map is targeted at
     const [loc, setLoc] = useState({ lat: 0, lng: 0 });
+    const [userLocation, setUserLocation] = useState(undefined);
+
+    //load user location when app starts
+    useEffect(() => {
+        const getPermissions = async () => {
+            //ask for permissions when in use
+            let { status } = await Location.requestForegroundPermissionsAsync();
+
+            if (status !== "granted") {
+                console.log("Pleas grant permissions");
+                return;
+            }
+
+            let currentLocation = await Location.getCurrentPositionAsync({});
+            setUserLocation(currentLocation);
+
+            //!
+            console.log("userLocation", userLocation);
+        };
+    }, []);
+
     return (
         <View>
             <ScrollView
@@ -49,5 +78,4 @@ const styles = StyleSheet.create({
         // zIndex: 1,
         height: "70%",
     },
-
 });
