@@ -6,9 +6,8 @@ import MapView from "react-native-maps";
 export const Map = ({ loc }) => {
     let mapRef = null;
 
-    //TODO change view with coords change
+    //update location when location state changes
     useEffect(() => {
-        // console.log("curren loc changed");
         const newView = {
             center: {
                 latitude: loc.lat,
@@ -19,9 +18,6 @@ export const Map = ({ loc }) => {
         };
 
         if (this.mapRef) {
-            // const point = this.mapRef.pointForCoordinate({Loc.lat,Loc.lng})
-            // console.log("camera will update", loc.lat, loc.lng);
-
             this.mapRef.animateCamera(newView, { duration: 1000 });
         }
     }, [loc]);

@@ -1,20 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { PaperProvider, Button } from "react-native-paper";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import {
-    FlatList,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Text,
-    View,
-} from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import { SearchPlaces } from "./components/SearchCities";
 import { Map } from "./components/Map";
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import FoundPlaces from "./components/FoundPlaces";
-import { PlaceCard } from "./components/PlaceCard/PlaceCard";
 
 export default function App() {
     //location map is targeted at
@@ -34,13 +26,12 @@ export default function App() {
                 return;
             }
 
+            //get user location if user allowed permissions and set state
             let currentLocation = await Location.getCurrentPositionAsync({});
             setUserLocation(currentLocation);
             const { latitude, longitude } = currentLocation.coords;
-            // setLoc({ lat: latitude, lng: longitude });
         };
 
-        //get permissions call
         getPermissions();
     }, []);
 
@@ -55,7 +46,6 @@ export default function App() {
                             style={styles.search}></SearchPlaces>
                     )}
                     keyboardShouldPersistTaps={"handled"}></FlatList>
-                {/* <FlatList data={attractions}  /> */}
                 <View style={styles.map}>
                     <Map loc={loc}></Map>
                 </View>

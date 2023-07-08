@@ -6,26 +6,26 @@ import { View, Text, FlatList } from "react-native";
 import { PlaceCard } from "./PlaceCard/PlaceCard";
 import Carousel from "react-native-snap-carousel";
 
-const FakeData = [
-    {
-        id: "12334",
-        name: "cool place",
-        type: "Feature",
-        kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
-    },
-    {
-        id: "1233455534",
-        name: "cool place2",
-        type: "Feature",
-        kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
-    },
-    {
-        id: "12343434",
-        name: "cool place3",
-        type: "Feature",
-        kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
-    },
-];
+// const FakeData = [
+//     {
+//         id: "12334",
+//         name: "cool place",
+//         type: "Feature",
+//         kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
+//     },
+//     {
+//         id: "1233455534",
+//         name: "cool place2",
+//         type: "Feature",
+//         kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
+//     },
+//     {
+//         id: "12343434",
+//         name: "cool place3",
+//         type: "Feature",
+//         kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
+//     },
+// ];
 
 export default function FoundPlaces({ location, setAttractions }) {
     //get list of places  form places service
@@ -41,24 +41,22 @@ export default function FoundPlaces({ location, setAttractions }) {
                 20
             );
 
-            //todo save list of places in a state
+            //format data to fit the placeCard component
             const placeCardFormat = listOfPlaces.map((data) => {
                 return {
                     id: data.id,
-                    name: data.properties.name,
+                    name: data.properties.name
+                        ? data.properties.name
+                        : "Nearby",
                     type: data.type,
                     cords: data.geometry,
                     wikidata: data.properties.wikidata,
                 };
             });
             setListOfPlaces(placeCardFormat);
-
-            console.log("placeCardFormat size", placeCardFormat.length);
         } catch (error) {
             console.log("error using places service from foundplacesButton");
         }
-
-        // setAttractions(listOfPlaces);
     }
     return (
         <View>
@@ -69,18 +67,10 @@ export default function FoundPlaces({ location, setAttractions }) {
                     // sliderHeight={200}
                     itemWidth={250}
                     // itemHeight={200}
-                    //!===========================================
-                    data={listOfPlaces} //todo INSERT LIVE DATA
-                    //!==========================================
+                    data={listOfPlaces}
                     renderItem={(data, index) => {
                         return <PlaceCard placeData={data.item} />;
                     }}></Carousel>
-                {/* <FlatList
-                    data={FakeData}
-                    keyExtraction={(data) => data.id}
-                    renderItem={(data) => (
-                        <PlaceCard placeData={data.item} />
-                    )}></FlatList> */}
             </View>
             <Button onPress={getPlaces} mode="contained" style={styles.button}>
                 get places
