@@ -1,15 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-native-paper";
 import { StyleSheet } from "react-native";
 import { OpenTrip as PlacesService } from "../services/openTrip";
 import { View, Text, FlatList } from "react-native";
 import { PlaceCard } from "./PlaceCard/PlaceCard";
 import Carousel from "react-native-snap-carousel";
-// const coordinates= []
-//     const id = ''
-//     const name=''
-//     const type="Feature"
-//     const kinds = "kinds": "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
+
 const FakeData = [
     {
         id: "12334",
@@ -32,6 +28,10 @@ const FakeData = [
 ];
 
 export default function FoundPlaces({ location, setAttractions }) {
+    //get list of places  form places service
+
+    const [listOfPlaces, setListOfPlaces] = useState([]);
+
     async function getPlaces() {
         try {
             const listOfPlaces = await PlacesService.getPlacesByRadius(
@@ -40,7 +40,20 @@ export default function FoundPlaces({ location, setAttractions }) {
                 1000,
                 20
             );
-            // console.log("listOfPlaces", listOfPlaces);
+
+            //todo save list of places in a state
+            const placeCardFormat = listOfPlaces.map((data) => {
+                return {
+                    id: data.id,
+                    name: data.properties.name,
+                    type: data.type,
+                    cords: data.geometry,
+                    wikidata: data.properties.wikidata,
+                };
+            });
+            setListOfPlaces(placeCardFormat);
+
+            console.log("placeCardFormat size", placeCardFormat.length);
         } catch (error) {
             console.log("error using places service from foundplacesButton");
         }
@@ -56,7 +69,9 @@ export default function FoundPlaces({ location, setAttractions }) {
                     // sliderHeight={200}
                     itemWidth={250}
                     // itemHeight={200}
-                    data={FakeData}
+                    //!===========================================
+                    data={listOfPlaces} //todo INSERT LIVE DATA
+                    //!==========================================
                     renderItem={(data, index) => {
                         return <PlaceCard placeData={data.item} />;
                     }}></Carousel>

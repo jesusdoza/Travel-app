@@ -3,7 +3,7 @@ import React from "react";
 import { Button, Card, Text } from "react-native-paper";
 
 export function PlaceCard({ placeData }) {
-    console.log("placeData", placeData);
+    // console.log("placeData", placeData);
     return (
         // <View style={styles.padding}>
         //     <Text>{placeData.id}</Text>

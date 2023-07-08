@@ -20,7 +20,7 @@ export const Map = ({ loc }) => {
 
         if (this.mapRef) {
             // const point = this.mapRef.pointForCoordinate({Loc.lat,Loc.lng})
-            console.log("camera will update", loc.lat, loc.lng);
+            // console.log("camera will update", loc.lat, loc.lng);
 
             this.mapRef.animateCamera(newView, { duration: 1000 });
         }
