@@ -1,11 +1,14 @@
 import { StatusBar } from "expo-status-bar";
+import { Button } from "react-native-paper";
+import { PaperProvider } from "react-native-paper";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import {
+    FlatList,
     Pressable,
     ScrollView,
     StyleSheet,
     Text,
     View,
-    VirtualizedList,
 } from "react-native";
 import { SearchPlaces } from "./components/SearchPlaces";
 import { Map } from "./components/Map";
@@ -19,6 +22,7 @@ export default function App() {
 
     //load user location when app starts
     useEffect(() => {
+        //definition of get permissions
         const getPermissions = async () => {
             //ask for permissions when in use
             let { status } = await Location.requestForegroundPermissionsAsync();
@@ -30,33 +34,34 @@ export default function App() {
 
             let currentLocation = await Location.getCurrentPositionAsync({});
             setUserLocation(currentLocation);
-
-            //!
-            console.log("userLocation", userLocation);
+            const { latitude, longitude } = currentLocation.coords;
+            // setLoc({ lat: latitude, lng: longitude });
         };
+
+        //get permissions call
+        getPermissions();
     }, []);
 
+    const gotToLocation = ({ lat, lng }) => {
+        setLoc({ lat, lng });
+    };
+
     return (
-        <View>
-            <ScrollView
-                style={styles.search}
-                keyboardShouldPersistTaps={"handled"}>
-                <SearchPlaces
-                    setMapLoc={setLoc}
-                    style={styles.search}></SearchPlaces>
-            </ScrollView>
-            <Text>
-                Map coords{loc.lat} {loc.lng}
-            </Text>
-            <View style={styles.map}>
-                <Map loc={loc}></Map>
-            </View>
-            <View>
-                <Pressable>
-                    <Text>look up places</Text>
-                </Pressable>
-            </View>
-        </View>
+        <PaperProvider>
+            <SafeAreaProvider>
+                <FlatList
+                    style={styles.search}
+                    ListHeaderComponent={() => (
+                        <SearchPlaces
+                            setMapLoc={setLoc}
+                            style={styles.search}></SearchPlaces>
+                    )}
+                    keyboardShouldPersistTaps={"handled"}></FlatList>
+                <View style={styles.map}>
+                    <Map loc={loc}></Map>
+                </View>
+            </SafeAreaProvider>
+        </PaperProvider>
     );
 }
 
@@ -69,13 +74,12 @@ const styles = StyleSheet.create({
         // position: "relative",
     },
     search: {
-        // zIndex: 10,
-        // position: "absolute",
-        // left: 0,
-        height: "20%",
+        top: 20,
+        zIndex: 30,
+        position: "absolute",
+        width: "100%",
     },
     map: {
-        // zIndex: 1,
-        height: "70%",
+        height: "100%",
     },
 });
