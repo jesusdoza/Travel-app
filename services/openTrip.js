@@ -22,7 +22,7 @@ export const OpenTrip = {
                 },
             });
             const featuresList = response.data.features;
-            // console.log(featuresList);
+            console.log("response",response);
             return featuresList;
         } catch (error) {
             console.log("get places by radius error");

@@ -9,11 +9,11 @@ import {
     Text,
     View,
 } from "react-native";
-import { SearchPlaces } from "./components/SearchPlacesBox";
+import { SearchPlaces } from "./components/SearchCities";
 import { Map } from "./components/Map";
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
-import FoundPlaces from "./components/FoundPlacesButton";
+import FoundPlacesButton from "./components/FoundPlacesButton";
 
 export default function App() {
     //location map is targeted at
@@ -29,7 +29,7 @@ export default function App() {
             let { status } = await Location.requestForegroundPermissionsAsync();
 
             if (status !== "granted") {
-                console.log("Pleas grant permissions");
+                console.log("Please grant permissions");
                 return;
             }
 
@@ -54,13 +54,15 @@ export default function App() {
                             style={styles.search}></SearchPlaces>
                     )}
                     keyboardShouldPersistTaps={"handled"}></FlatList>
-                    <FlatList data={attractions}  />
+                {/* <FlatList data={attractions}  /> */}
                 <View style={styles.map}>
                     <Map loc={loc}></Map>
                 </View>
 
                 <View>
-                    <FoundPlaces location={loc}></FoundPlaces>
+                    <FoundPlacesButton
+                        setAttractions={setAttractions}
+                        location={loc}></FoundPlacesButton>
                 </View>
             </SafeAreaProvider>
         </PaperProvider>

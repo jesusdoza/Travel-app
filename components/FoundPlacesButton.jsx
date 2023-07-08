@@ -5,14 +5,19 @@ import { OpenTrip as PlacesService } from "../services/openTrip";
 
 export default function FoundPlaces({ location, setAttractions }) {
     async function getPlaces() {
-        const listOfPlaces = await PlacesService.getPlacesByRadius(
-            location.lat,
-            location.lng,
-            1000,
-            20
-        );
+        try {
+            const listOfPlaces = await PlacesService.getPlacesByRadius(
+                location.lat,
+                location.lng,
+                1000,
+                20
+            );
+            // console.log("listOfPlaces", listOfPlaces);
+        } catch (error) {
+            console.log("error using places service from foundplacesButton");
+        }
 
-        setAttractions(listOfPlaces);
+        // setAttractions(listOfPlaces);
     }
     return (
         <Button onPress={getPlaces} mode="contained" style={styles.button}>
