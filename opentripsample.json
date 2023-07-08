@@ -1,0 +1,169 @@
+{
+    "config": {
+        "adapter": [
+            "xhr",
+            "http"
+        ],
+        "data": undefined,
+        "env": {
+            "Blob": [Function Blob
+            ],
+            "FormData": [Function FormData
+            ]
+        },
+        "headers": [Object
+        ],
+        "maxBodyLength": -1,
+        "maxContentLength": -1,
+        "method": "get",
+        "params": {
+            "apikey": "5ae2e3f221c38a28845f05b6bfcb134e846807fae8ddb6396ec05d8a",
+            "lang": "en",
+            "lat": 32.7766642,
+            "limit": 20,
+            "lon": -96.79698789999999,
+            "radius": 1000
+        },
+        "timeout": 0,
+        "transformRequest": [
+            [Function transformRequest
+            ]
+        ],
+        "transformResponse": [
+            [Function transformResponse
+            ]
+        ],
+        "transitional": {
+            "clarifyTimeoutError": false,
+            "forcedJSONParsing": true,
+            "silentJSONParsing": true
+        },
+        "url": "http://api.opentripmap.com/0.1/en/places/radius",
+        "validateStatus": [Function validateStatus
+        ],
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN"
+    },
+    "data": {
+        "features": [
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ],
+            [Object
+            ]
+        ],
+        "type": "FeatureCollection"
+    },
+    "headers": {
+        "connection": "keep-alive",
+        "content-type": "application/json;charset=utf-8",
+        "date": "Sat, 08 Jul 2023 01:21:57 GMT",
+        "server": "nginx/1.10.3 (Ubuntu)",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding, Accept-Charset, Accept-Encoding, Accept-Language, Accept",
+        "x-ratelimit-limit": "10",
+        "x-ratelimit-remaining": "9",
+        "x-ratelimit-reset": "1688779318"
+    },
+    "request": {
+        "DONE": 4,
+        "HEADERS_RECEIVED": 2,
+        "LOADING": 3,
+        "OPENED": 1,
+        "UNSENT": 0,
+        "_aborted": false,
+        "_cachedResponse": undefined,
+        "_hasError": false,
+        "_headers": {
+            "accept": "application/json, text/plain, */*"
+        },
+        "_incrementalEvents": false,
+        "_lowerCaseResponseHeaders": {
+            "connection": "keep-alive",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Sat, 08 Jul 2023 01:21:57 GMT",
+            "server": "nginx/1.10.3 (Ubuntu)",
+            "transfer-encoding": "chunked",
+            "vary": "Accept-Encoding, Accept-Charset, Accept-Encoding, Accept-Language, Accept",
+            "x-ratelimit-limit": "10",
+            "x-ratelimit-remaining": "9",
+            "x-ratelimit-reset": "1688779318"
+        },
+        "_method": "GET",
+        "_perfKey": "network_XMLHttpRequest_http://api.opentripmap.com/0.1/en/places/radius?radius=1000&lang=en&lon=-96.79698789999999&lat=32.7766642&apikey=5ae2e3f221c38a28845f05b6bfcb134e846807fae8ddb6396ec05d8a&limit=20",
+        "_performanceLogger": {
+            "_closed": false,
+            "_extras": [Object
+            ],
+            "_pointExtras": [Object
+            ],
+            "_points": [Object
+            ],
+            "_timespans": [Object
+            ]
+        },
+        "_requestId": null,
+        "_response": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"id\":\"11619590\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.79702,32.7768669]},\"properties\":{\"xid\":\"N6990912652\",\"name\":\"Three Forms Vertebrae\",\"dist\":22.88909558,\"rate\":1,\"osm\":\"node/6990912652\",\"wikidata\":\"Q19759425\",\"kinds\":\"historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments\"}},{\"type\":\"Feature\",\"id\":\"11308231\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7969437,32.7770958]},\"properties\":{\"xid\":\"R8468255\",\"name\":\"Dallas City Hall Plaza\",\"dist\":47.91811666,\"rate\":2,\"osm\":\"relation/8468255\",\"wikidata\":\"Q49481709\",\"kinds\":\"urban_environment,gardens_and_parks,cultural,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"10591078\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7977295,32.7768669]},\"properties\":{\"xid\":\"W610129849\",\"name\":\"\",\"dist\":73.27073268,\"rate\":0,\"osm\":\"way/610129849\",\"kinds\":\"fountains,cultural,urban_environment,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"11342249\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7987595,32.7768669]},\"properties\":{\"xid\":\"N3236349961\",\"name\":\"Police Officers Memorial\",\"dist\":167.68502569,\"rate\":1,\"osm\":\"node/3236349961\",\"wikidata\":\"Q107322007\",\"kinds\":\"historic,monuments_and_memorials,interesting_places,monuments\"}},{\"type\":\"Feature\",\"id\":\"16045182\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7951202,32.7782211]},\"properties\":{\"xid\":\"Q107322244\",\"name\":\"Winnetka Heights Historic District\",\"dist\":245.75206652,\"rate\":1,\"wikidata\":\"Q107322244\",\"kinds\":\"historic,historical_places,interesting_places,historic_districts\"}},{\"type\":\"Feature\",\"id\":\"11803938\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7996368,32.7755966]},\"properties\":{\"xid\":\"W747131404\",\"name\":\"Confederate War Memorial\",\"dist\":274.97084724,\"rate\":3,\"osm\":\"way/747131404\",\"wikidata\":\"Q5159751\",\"kinds\":\"historic,monuments_and_memorials,burial_places,interesting_places,war_memorials,monuments\"}},{\"type\":\"Feature\",\"id\":\"11803936\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.8001404,32.7759171]},\"properties\":{\"xid\":\"W469277144\",\"name\":\"\",\"dist\":306.62963708,\"rate\":1,\"osm\":\"way/469277144\",\"wikidata\":\"Q7196750\",\"kinds\":\"cemeteries,historic,burial_places,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"11492711\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.8004303,32.7760887]},\"properties\":{\"xid\":\"W27129901\",\"name\":\"Pioneer Park\",\"dist\":328.96860149,\"rate\":3,\"osm\":\"way/27129901\",\"wikidata\":\"Q7196763\",\"kinds\":\"urban_environment,gardens_and_parks,cultural,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"15157414\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7988968,32.7793999]},\"properties\":{\"xid\":\"Q7994115\",\"name\":\"Whitacre Tower\",\"dist\":352.3392788,\"rate\":3,\"wikidata\":\"Q7994115\",\"kinds\":\"skyscrapers,architecture,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"15836603\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.8003006,32.7790985]},\"properties\":{\"xid\":\"Q5211326\",\"name\":\"Dallas Downtown Historic 
+District\",\"dist\":411.40840118,\"rate\":7,\"wikidata\":\"Q5211326\",\"kinds\":\"historic,historical_places,interesting_places,historic_districts\"}},{\"type\":\"Feature\",\"id\":\"11511439\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.793663,32.7791405]},\"properties\":{\"xid\":\"W30897971\",\"name\":\"First Presbyterian Church of Dallas\",\"dist\":415.29734462,\"rate\":3,\"osm\":\"way/30897971\",\"wikidata\":\"Q5453682\",\"kinds\":\"religion,churches,interesting_places,other_churches\"}},{\"type\":\"Feature\",\"id\":\"11803939\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7990723,32.7801552]},\"properties\":{\"xid\":\"W30898509\",\"name\":\"magnolia hotel downtown dallas\",\"dist\":433.5077794,\"rate\":7,\"osm\":\"way/30898509\",\"wikidata\":\"Q12061439\",\"kinds\":\"skyscrapers,architecture,accomodations,interesting_places,other_hotels\"}},{\"type\":\"Feature\",\"id\":\"15827208\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7996597,32.7799797]},\"properties\":{\"xid\":\"Q366005\",\"name\":\"Adolphus Hotel\",\"dist\":444.83510895,\"rate\":7,\"wikidata\":\"Q366005\",\"kinds\":\"architecture,skyscrapers,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"15156019\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.8013077,32.7784958]},\"properties\":{\"xid\":\"Q7419567\",\"name\":\"Santa Fe Terminal Complex\",\"dist\":453.01062793,\"rate\":7,\"wikidata\":\"Q7419567\",\"kinds\":\"historic_architecture,architecture,interesting_places,other_buildings_and_structures\"}},{\"type\":\"Feature\",\"id\":\"15382555\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7967987,32.7807999]},\"properties\":{\"xid\":\"Q6818031\",\"name\":\"Mercantile National Bank Building\",\"dist\":459.00009037,\"rate\":3,\"wikidata\":\"Q6818031\",\"kinds\":\"skyscrapers,architecture,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"14911646\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7934036,32.7795601]},\"properties\":{\"xid\":\"Q107330477\",\"name\":\"First Presbyterian Church\",\"dist\":464.80483484,\"rate\":1,\"wikidata\":\"Q107330477\",\"kinds\":\"religion,churches,interesting_places,other_churches\"}},{\"type\":\"Feature\",\"id\":\"14470817\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7968063,32.7808418]},\"properties\":{\"xid\":\"Q7829719\",\"name\":\"Tower Petroleum Building\",\"dist\":463.73749802,\"rate\":3,\"wikidata\":\"Q7829719\",\"kinds\":\"architecture,skyscrapers,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"11492712\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7991028,32.7804642]},\"properties\":{\"xid\":\"W450893343\",\"name\":\"Pegasus Plaza\",\"dist\":465.7048396,\"rate\":3,\"osm\":\"way/450893343\",\"wikidata\":\"Q7160584\",\"kinds\":\"urban_environment,gardens_and_parks,cultural,interesting_places\"}},{\"type\":\"Feature\",\"id\":\"16053101\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.79245,32.7788696]},\"properties\":{\"xid\":\"Q107322018\",\"name\":\"Scottish Rite Cathedral\",\"dist\":490.26648055,\"rate\":1,\"wikidata\":\"Q107322018\",\"kinds\":\"religion,churches,interesting_places,other_churches\"}},{\"type\":\"Feature\",\"id\":\"15289308\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-96.7980881,32.7810135]},\"properties\":{\"xid\":\"Q42298650\",\"name\":\"Empire Theater\",\"dist\":493.48768786,\"rate\":1,\"wikidata\":\"Q42298650\",\"kinds\":\"cinemas,cultural,theatres_and_entertainments,interesting_places\"}}]}",
+        "_responseType": "",
+        "_sent": true,
+        "_subscriptions": [],
+        "_timedOut": false,
+        "_trackingName": "unknown",
+        "_url": "http://api.opentripmap.com/0.1/en/places/radius?radius=1000&lang=en&lon=-96.79698789999999&lat=32.7766642&apikey=5ae2e3f221c38a28845f05b6bfcb134e846807fae8ddb6396ec05d8a&limit=20",
+        "readyState": 4,
+        "responseHeaders": {
+            "Connection": "keep-alive",
+            "Content-Type": "application/json;charset=utf-8",
+            "Date": "Sat, 08 Jul 2023 01:21:57 GMT",
+            "Server": "nginx/1.10.3 (Ubuntu)",
+            "Transfer-Encoding": "chunked",
+            "Vary": "Accept-Encoding, Accept-Charset, Accept-Encoding, Accept-Language, Accept",
+            "X-RateLimit-Limit": "10",
+            "X-RateLimit-Remaining": "9",
+            "X-RateLimit-Reset": "1688779318"
+        },
+        "responseURL": "http://api.opentripmap.com/0.1/en/places/radius?radius=1000&lang=en&lon=-96.79698789999999&lat=32.7766642&apikey=5ae2e3f221c38a28845f05b6bfcb134e846807fae8ddb6396ec05d8a&limit=20",
+        "status": 200,
+        "timeout": 0,
+        "upload": {},
+        "withCredentials": true
+    },
+    "status": 200,
+    "statusText": undefined
+}

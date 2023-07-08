@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Button } from "react-native-paper";
-import { PaperProvider } from "react-native-paper";
+import { PaperProvider, Button } from "react-native-paper";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import {
     FlatList,
@@ -10,15 +9,17 @@ import {
     Text,
     View,
 } from "react-native";
-import { SearchPlaces } from "./components/SearchPlaces";
+import { SearchPlaces } from "./components/SearchPlacesBox";
 import { Map } from "./components/Map";
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
+import FoundPlaces from "./components/FoundPlacesButton";
 
 export default function App() {
     //location map is targeted at
     const [loc, setLoc] = useState({ lat: 0, lng: 0 });
     const [userLocation, setUserLocation] = useState(undefined);
+    const [attractions, setAttractions] = useState([]);
 
     //load user location when app starts
     useEffect(() => {
@@ -42,10 +43,6 @@ export default function App() {
         getPermissions();
     }, []);
 
-    const gotToLocation = ({ lat, lng }) => {
-        setLoc({ lat, lng });
-    };
-
     return (
         <PaperProvider>
             <SafeAreaProvider>
@@ -57,8 +54,13 @@ export default function App() {
                             style={styles.search}></SearchPlaces>
                     )}
                     keyboardShouldPersistTaps={"handled"}></FlatList>
+                    <FlatList data={attractions}  />
                 <View style={styles.map}>
                     <Map loc={loc}></Map>
+                </View>
+
+                <View>
+                    <FoundPlaces location={loc}></FoundPlaces>
                 </View>
             </SafeAreaProvider>
         </PaperProvider>
