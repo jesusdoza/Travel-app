@@ -4,7 +4,6 @@ import MapView from "react-native-maps";
 
 //Loc where map should poin to
 export const Map = ({ loc }) => {
-    // console.log("loc at map component ", loc);
     let mapRef = null;
 
     //TODO change view with coords change

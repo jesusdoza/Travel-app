@@ -13,7 +13,8 @@ import { SearchPlaces } from "./components/SearchCities";
 import { Map } from "./components/Map";
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
-import FoundPlacesButton from "./components/FoundPlacesButton";
+import FoundPlaces from "./components/FoundPlaces";
+import { PlaceCard } from "./components/PlaceCard/PlaceCard";
 
 export default function App() {
     //location map is targeted at
@@ -59,10 +60,10 @@ export default function App() {
                     <Map loc={loc}></Map>
                 </View>
 
-                <View>
-                    <FoundPlacesButton
+                <View style={styles.placesControls}>
+                    <FoundPlaces
                         setAttractions={setAttractions}
-                        location={loc}></FoundPlacesButton>
+                        location={loc}></FoundPlaces>
                 </View>
             </SafeAreaProvider>
         </PaperProvider>
@@ -85,5 +86,15 @@ const styles = StyleSheet.create({
     },
     map: {
         height: "100%",
+    },
+    placesControls: {
+        bottom: 10,
+        position: "absolute",
+        width: "100%",
+        // height: "30%",
+        backgroundColor: "gray",
+    },
+    placeCard: {
+        zIndex: 10,
     },
 });
