@@ -8,9 +8,16 @@ import { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import FoundPlaces from "./components/FoundPlaces";
 
+const DEFAULT_ZOOM = 10;
 export default function App() {
     //location map is targeted at
-    const [loc, setLoc] = useState({ lat: 0, lng: 0 });
+
+    const [currentMapLocation, setCurrentMapLocation] = useState({
+        lat: 0,
+        lng: 0,
+    });
+    const [mapZoom, setMapZoom] = useState(DEFAULT_ZOOM);
+
     const [userLocation, setUserLocation] = useState(undefined);
     const [attractions, setAttractions] = useState([]);
 
@@ -42,18 +49,22 @@ export default function App() {
                     style={styles.search}
                     ListHeaderComponent={() => (
                         <SearchPlaces
-                            setMapLoc={setLoc}
+                            setMapLoc={setCurrentMapLocation}
                             style={styles.search}></SearchPlaces>
                     )}
                     keyboardShouldPersistTaps={"handled"}></FlatList>
                 <View style={styles.map}>
-                    <Map loc={loc}></Map>
+                    <Map
+                        mapZoom={mapZoom}
+                        currentMapLocation={currentMapLocation}></Map>
                 </View>
 
                 <View style={styles.placesControls}>
                     <FoundPlaces
+                        setMapZoom={setMapZoom}
                         setAttractions={setAttractions}
-                        location={loc}></FoundPlaces>
+                        location={currentMapLocation}
+                        setLocation={setCurrentMapLocation}></FoundPlaces>
                 </View>
             </SafeAreaProvider>
         </PaperProvider>
@@ -82,7 +93,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         width: "100%",
         // height: "30%",
-        backgroundColor: "gray",
+        // backgroundColor: "gray",
     },
     placeCard: {
         zIndex: 10,

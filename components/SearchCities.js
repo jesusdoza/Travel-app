@@ -17,7 +17,8 @@ export function SearchPlaces({ setMapLoc }) {
                         fetchDetails={true}
                         onPress={(data, details = null) => {
                             const cords = details.geometry.location;
-
+                            console.log("details", details);
+                            console.log("data", data);
                             const { lat, lng } = cords;
 
                             setCords(() => {

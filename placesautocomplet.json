@@ -1,0 +1,128 @@
+{
+    "address_components": [
+        {
+            "long_name": "Dallas",
+            "short_name": "Dallas",
+            "types": [Array
+            ]
+        },
+        {
+            "long_name": "Dallas County",
+            "short_name": "Dallas County",
+            "types": [Array
+            ]
+        },
+        {
+            "long_name": "Texas",
+            "short_name": "TX",
+            "types": [Array
+            ]
+        },
+        {
+            "long_name": "United States",
+            "short_name": "US",
+            "types": [Array
+            ]
+        }
+    ],
+    "adr_address": "<span class=\"locality\">Dallas</span>, <span class=\"region\">TX</span>, <span class=\"country-name\">USA</span>",
+    "formatted_address": "Dallas, TX, USA",
+    "geometry": {
+        "location": {
+            "lat": 32.7766642,
+            "lng": -96.79698789999999
+        },
+        "viewport": {
+            "northeast": [Object
+            ],
+            "southwest": [Object
+            ]
+        }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png",
+    "icon_background_color": "#7B9EB0",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+    "name": "Dallas",
+    "photos": [
+        {
+            "height": 1024,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcJtVA3TpkBq13hmC5p7wkb86fk-J7JqVlmv5JuSojioMnIEAKO3uPznPxfD-V3dAUTc9q2LOrYXWhRa_p5yE3VHtzs0NiD2b9JML7J_HAy2n-FMAopNVJL_Pk4cM3yywggXFA0jW9MkyVzZ4n6Q1Q0N--ADTZHQsj3HFk8-aFdinrup",
+            "width": 1024
+        },
+        {
+            "height": 716,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcKGFmheHtRiRLt6OEX7f_9yGn75-UFtq0x9M3gr664SLl99rLa7G8agufRUTFVvfU6bCar_0IPXhBkoNZZWU_2RJ1x3TsapbF26WJKRz-8dWbrfHY0I7AIN1SEc_wXSH8Ho6uLu9AsXrqIc7H-aM6JiVSNT1w6CE7uGs341hBS5pdJI",
+            "width": 1080
+        },
+        {
+            "height": 2160,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcIR7AV_xecxapDul_nn2BK_AdPlWhANIjKomvKxg4_WmkJJB9p3T9osLXNDU1DwLZUjuTE4bg6_KQ22Pq2qIlZ9t9MOzBQwunGaS-0RF9H46nRdtl1QTI0KbWg1hHrHbrYYs98GO4Nr8M371-2yjL1RF8Jv_7Y5Ab-NCu1hYg-10u3B",
+            "width": 3840
+        },
+        {
+            "height": 1816,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcLyDk2ym3O_eKpdKn5hgEySec-DxjLZBiYHaglGyfJNFnNB5ywKlB1X_PFaXWgCfblbOjivbF9zKKh81ftQdEJIMEnuwGxHMjtb0A5WRlaQK1i0IhnwuK7zHk1vmT-eXLaq1LC4d6cDloo__VB_U319BMBhQwcB6Bm5N_NHmR2uZCIc",
+            "width": 4032
+        },
+        {
+            "height": 3840,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcIo60BMAkMcBShqMybxsahvCdiUqqB-gIwRx9SXKKgBA4xkoLoDB6rIrauXE0d_yh37gfmMmb08wWlSGeziKu0LQ0u0CWNNjtCy5hn1jezWR-lySLa8JpSdwJKsiJH_a-y8HIKlDoAduSpO8qcGbNZlJifloQhwuTgF4kb1l-jYbHhb",
+            "width": 2160
+        },
+        {
+            "height": 1440,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcJgXrTJYjRpAH5ObwELTCmYWredPnq1uSMNU5GEEQgh3rQzlJBICtG3sZO_amKr1rLpHX6B9mMcszSTRfJVTowCfLBQSEs5rhCX17YhrAGDvt_XzvRoaBAsMWu7j-BiE-kNtcf82mDMLDVZ-9pC8StWqWwPYyLVsfMMBBdnjrve-y34",
+            "width": 2560
+        },
+        {
+            "height": 1024,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcKxJ4BMAw88SQf02u5D_5uF1pyFIcvh8g5SwGGcL6STVInM4k9K8Keq7zGGrDVWND0XwpdsGMzDW8QY6Khs8euPBm6NFK6gyxyy0555QQjw4nM-YvIl3DMykOpPyXrZd0V4ZJrgXABr_PrGEqQvCGrIHd4Ye_aQsL5mX9UijgvjfGCr",
+            "width": 768
+        },
+        {
+            "height": 2448,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcIyyUh0L3epq98qHluIqJCtUi_Hrw75SPB_O0pIRFJjmJnYztlspBPi9saYeSr7sUrHPBE70VujRZECBMZIzF66bxwg0WOWmZtHQsOKa-s5MQB409mXunQuUmiZQzjNDc52075IMGPhOUK2Sb64QdVGuul1jHlzPfoKUQxFzLMinW_1",
+            "width": 3264
+        },
+        {
+            "height": 289,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcIoJ2qLjq7cqkhXg-gaIyFX2b3VtyoUE6-hQnMrZA4Wd9Tb_UGQ_yhfzRV-S6S_WwaGVU1j7TIyimTQlxD8UZH3TxzBYQs5-iwbMC5Rxy8eCpubec7T_NMonJSQsiBGg2rppiio7oChSpla_eBwOtK9zsuICKUVqyMLovjy39gjxGAZ",
+            "width": 474
+        },
+        {
+            "height": 3264,
+            "html_attributions": [Array
+            ],
+            "photo_reference": "Aaw_FcKRGKAqQIPAwwQEGR-viq9nKBhwKlFd2urFChF6alsD2LZqMvqHoM7r9ppIo2PWgn4gJHWSii2cgf5dbjYm0G4Tn1qXznsqS6_c-qm5o6_z_Zhx7tKfFNCKxKl6fKEjkfQlp1WB_Wyp4DSUU334duPpHFBN2_AaDXmu8xaa_ELQ1njq",
+            "width": 1836
+        }
+    ],
+    "place_id": "ChIJS5dFe_cZTIYRj2dH9qSb7Lk",
+    "reference": "ChIJS5dFe_cZTIYRj2dH9qSb7Lk",
+    "types": [
+        "locality",
+        "political"
+    ],
+    "url": "https://maps.google.com/?q=Dallas,+TX,+USA&ftid=0x864c19f77b45974b:0xb9ec9ba4f647678f",
+    "utc_offset": -300,
+    "vicinity": "Dallas",
+    "website": "http://www.visitdallas.com/"
+}

@@ -27,13 +27,34 @@ import Carousel from "react-native-snap-carousel";
 //     },
 // ];
 
-export default function FoundPlaces({ location, setAttractions }) {
+export default function FoundPlaces({
+    location,
+    setLocation,
+    setAttractions,
+    setMapZoom,
+}) {
     //get list of places  form places service
 
     const [listOfPlaces, setListOfPlaces] = useState([]);
 
+    //TODO got to attraction on map base on index
+    function goToAttraction(index) {
+        // console.log("attraction selected ", index);
+        // console.log("data for this attraction ", listOfPlaces[index]);
+        const attraction = listOfPlaces[index];
+
+        setLocation({
+            lat: attraction.cords.coordinates[1],
+            lng: attraction.cords.coordinates[0],
+        });
+        setMapZoom((zoom) => {
+            return zoom + 3;
+        });
+    }
+
     async function getPlaces() {
         try {
+            //get nearby attractions
             const listOfPlaces = await PlacesService.getPlacesByRadius(
                 location.lat,
                 location.lng,
@@ -41,7 +62,7 @@ export default function FoundPlaces({ location, setAttractions }) {
                 20
             );
 
-            //format data to fit the placeCard component
+            //format data to fit the placeCard component props
             const placeCardFormat = listOfPlaces.map((data) => {
                 return {
                     id: data.id,
@@ -63,6 +84,7 @@ export default function FoundPlaces({ location, setAttractions }) {
             <View style={styles.carouselContainer}>
                 <Text>places list here</Text>
                 <Carousel
+                    onSnapToItem={goToAttraction}
                     sliderWidth={400}
                     // sliderHeight={200}
                     itemWidth={250}
