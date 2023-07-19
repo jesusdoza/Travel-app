@@ -6,30 +6,9 @@ import { View, Text, FlatList } from "react-native";
 import { PlaceCard } from "./PlaceCard/PlaceCard";
 import Carousel from "react-native-snap-carousel";
 
-// const FakeData = [
-//     {
-//         id: "12334",
-//         name: "cool place",
-//         type: "Feature",
-//         kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
-//     },
-//     {
-//         id: "1233455534",
-//         name: "cool place2",
-//         type: "Feature",
-//         kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
-//     },
-//     {
-//         id: "12343434",
-//         name: "cool place3",
-//         type: "Feature",
-//         kind: "historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments",
-//     },
-// ];
-
-export default function FoundPlaces({
+export default function FindPlaces({
     location,
-    setLocation,
+    setMapLocation,
     setAttractions,
     setMapZoom,
 }) {
@@ -43,12 +22,12 @@ export default function FoundPlaces({
         // console.log("data for this attraction ", listOfPlaces[index]);
         const attraction = listOfPlaces[index];
 
-        setLocation({
+        setMapLocation({
             lat: attraction.cords.coordinates[1],
             lng: attraction.cords.coordinates[0],
         });
         setMapZoom((zoom) => {
-            return zoom + 3;
+            return 10;
         });
     }
 

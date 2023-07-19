@@ -5,6 +5,7 @@ const API_URL = `http://api.opentripmap.com/0.1/${LANG}/places`;
 
 export const OpenTrip = {
     getPlacesByRadius: async (lat, lng, radius, limit = 20) => {
+        console.log("lat, lng, radius, limit", lat, lng, radius, limit);
         try {
             const response = await axios.get(`${API_URL}/radius`, {
                 params: {
