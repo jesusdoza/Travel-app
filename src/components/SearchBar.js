@@ -3,7 +3,7 @@ import { View, FlatList, StyleSheet } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { GOOG_PLACES_KEY } from "react-native-dotenv";
 
-export function SearchPlaces({ setMapLoc }) {
+export function SearchBar({ setMapLoc }) {
     const [cords, setCords] = useState({ lat: 0, lng: 0 });
 
     return (

@@ -11,7 +11,7 @@ export const Map = ({ currentMapLocation, mapZoom = 13 }) => {
     useEffect(() => {
         const newView = {
             center: {
-                latitude: currentMapLocation.lat,
+                latitude: currentMapLocation.lat - 0.1,
                 longitude: currentMapLocation.lng,
             },
 

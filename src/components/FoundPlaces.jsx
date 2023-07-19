@@ -5,6 +5,7 @@ import { OpenTrip as PlacesService } from "../services/openTrip";
 import { View, Text, FlatList } from "react-native";
 import { PlaceCard } from "./PlaceCard/PlaceCard";
 import Carousel from "react-native-snap-carousel";
+import PlaceCardContainer from "../container/PlaceCardContainer";
 
 export default function FindPlaces({
     location,
@@ -18,10 +19,9 @@ export default function FindPlaces({
 
     //TODO got to attraction on map base on index
     function goToAttraction(index) {
-        // console.log("attraction selected ", index);
-        // console.log("data for this attraction ", listOfPlaces[index]);
         const attraction = listOfPlaces[index];
 
+        //change map marker to location
         setMapLocation({
             lat: attraction.cords.coordinates[1],
             lng: attraction.cords.coordinates[0],
@@ -37,7 +37,7 @@ export default function FindPlaces({
             const listOfPlaces = await PlacesService.getPlacesByRadius(
                 location.lat,
                 location.lng,
-                1000,
+                10000,
                 20
             );
 
@@ -70,7 +70,8 @@ export default function FindPlaces({
                     // itemHeight={200}
                     data={listOfPlaces}
                     renderItem={(data, index) => {
-                        return <PlaceCard placeData={data.item} />;
+                        // return <PlaceCard placeData={data.item} />;
+                        return <PlaceCardContainer placeData={data.item} />;
                     }}></Carousel>
             </View>
             <Button onPress={getPlaces} mode="contained" style={styles.button}>

@@ -1,11 +1,12 @@
-import { StatusBar } from "expo-status-bar";
+// import { StatusBar } from "expo-status-bar";
 import { PaperProvider, Button } from "react-native-paper";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import { SearchPlaces } from "./components/SearchCities";
+import { StyleSheet, Text, View } from "react-native";
 import { Map } from "./components/Map";
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
+
+import SearchBarContainer from "./container/SearchBarContainer";
 import FindPlaces from "./components/FoundPlaces";
 
 const DEFAULT_ZOOM = 10;
@@ -46,14 +47,12 @@ export default function App() {
     return (
         <PaperProvider>
             <SafeAreaProvider>
-                <FlatList
-                    style={styles.search}
-                    ListHeaderComponent={() => (
-                        <SearchPlaces
-                            setMapLoc={setCurrentMapLocation}
-                            style={styles.search}></SearchPlaces>
-                    )}
-                    keyboardShouldPersistTaps={"handled"}></FlatList>
+                <View style={styles.search}>
+                    <SearchBarContainer
+                        setCurrentMapLocation={setCurrentMapLocation}
+                    />
+                </View>
+
                 <View style={styles.map}>
                     <Map
                         mapZoom={mapZoom}
